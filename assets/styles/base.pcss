@@ -1,0 +1,45 @@
+.wrapper {
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+.grid-12 {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-12 {
+    display: grid;
+    grid-template: 12fr;
+  }
+}
+
+.link-cta {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-md);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.list li {
+  margin-bottom: var(--space-md);
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--gray-400);
+  letter-spacing: -0.3px;
+}
