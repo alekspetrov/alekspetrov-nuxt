@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-12">
+  <div class="content-wrapper main-page">
     <div class="banner">
       <div>
         <h1 class="title text-huge">Aleksei Petrov</h1>
@@ -24,18 +24,34 @@ export default {
   components: {
     IconMail,
   },
-  metaInfo: {
-    title: 'Designer, Coder, Product Manager',
+
+  head() {
+    return {
+      title: 'Designer, Coder, Product Manager',
+    }
   },
 }
 </script>
 
 <style lang="postcss" scoped>
+.main-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+}
+
 .title {
   margin-bottom: var(--space-lg);
 }
 
 .text {
+  max-width: 640px;
+  margin: 0 auto;
   color: var(--gray-900);
   font-size: var(--text-md);
   line-height: 2;

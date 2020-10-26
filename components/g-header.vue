@@ -5,8 +5,6 @@
     </nuxt-link>
     <nav class="nav">
       <nuxt-link class="nav__link" to="/whoami">Whoami</nuxt-link>
-      <nuxt-link class="nav__link" to="/cases">Cases</nuxt-link>
-      <nuxt-link class="nav__link" to="/magazine">Magazine</nuxt-link>
     </nav>
     <theme-switcher @onSwitch="$emit('switch-theme')" />
   </header>
@@ -27,8 +25,6 @@ export default {
 
 <style lang="postcss" scoped>
 .header {
-  grid-row: 1;
-  grid-column: 1 / 13;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,6 +48,7 @@ export default {
 .nav__link {
   display: inline-block;
   font-weight: 500;
+  font-size: var(--text-md);
   text-decoration: none;
 }
 

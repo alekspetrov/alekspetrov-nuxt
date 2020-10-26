@@ -7,5 +7,6 @@
 <style lang="postcss" scoped>
 .body {
   flex: 1;
+  display: flex;
 }
 </style>
