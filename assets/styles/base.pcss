@@ -1,17 +1,22 @@
 .wrapper {
-  padding-left: var(--space-xl);
-  padding-right: var(--space-xl);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media screen and (max-width: 768px) {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
 }
 
 .content-wrapper {
   flex: 1;
-  max-width: 840px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
 .link-cta {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 500;
   font-size: var(--text-md);
   text-decoration: none;
   letter-spacing: -0.3px;

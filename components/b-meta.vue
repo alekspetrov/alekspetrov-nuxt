@@ -8,25 +8,26 @@
 
 <script>
 export default {
-  name: "BMeta",
-  props: ["date", "tag"],
+  name: 'BMeta',
+  props: ['date', 'tag'],
   computed: {
     humanReadableDate() {
-      const date = new Date(this.date);
+      const date = new Date(this.date)
       const options = {
-        day: "numeric",
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-      };
-      return date.toLocaleDateString("en-US", options).replace(/^\S+\s/, "");
+        day: 'numeric',
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+      }
+      return date.toLocaleDateString('en-US', options).replace(/^\S+\s/, '')
     },
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>
-.tag {
-  font-weight: 500;
+.meta {
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
 }
 </style>
