@@ -7,7 +7,11 @@
       <p class="subtitle">{{ $prismic.asText(document.description) }}</p>
       <b-meta :date="document.date" tag="Design" class="meta" />
     </header>
-    <article class="article" v-html="document.description[0].text" />
+    <article class="article">
+      <img :src="image" alt="" />
+      <p v-html="document.description[0].text"></p>
+      <p v-html="document.description[0].text"></p>
+    </article>
   </div>
 </template>
 
@@ -25,6 +29,7 @@ export default {
       return {
         document: post,
         slices: post.body,
+        image: post.image.url,
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
@@ -35,7 +40,7 @@ export default {
 
 <style lang="postcss" scoped>
 .header {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-4xl);
 }
 
 .title {
@@ -45,7 +50,7 @@ export default {
 }
 
 .subtitle {
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-family: var(--font-sans);
   font-weight: 500;
   margin-bottom: var(--space-xl);
