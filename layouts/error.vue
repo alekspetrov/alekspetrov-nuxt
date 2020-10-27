@@ -1,30 +1,38 @@
 <template>
   <div class="page">
-    <div class="text-center">
+    <div class="page-inner text-center">
       <span class="code">404</span>
       <h1 class="title text-huge">You got lost in space</h1>
-      <p class="text">Seems like this page doesn't exist!</p>
-      <a href="/" class="btn">Go to back</a>
+      <p class="text">Sorry, this page doesn't exist!</p>
+      <nuxt-link to="/" class="btn">Go back</nuxt-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  layout: 'clean',
+}
+</script>
 
 <style lang="postcss" scoped>
 .page {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin: auto;
 }
 
 .code {
   font-family: var(--font-sans);
   font-size: var(--text-xl);
+  color: var(--gray-400);
   font-weight: 500;
 }
 
 .title {
   margin-bottom: var(--space-xl);
+  color: var(--black);
 }
 
 .text {
