@@ -45,7 +45,6 @@ export default {
 .banner {
   margin-top: var(--space-6xl);
   padding-bottom: var(--space-2xl);
-  border-bottom: 1px solid var(--gray-200);
 }
 
 .title {

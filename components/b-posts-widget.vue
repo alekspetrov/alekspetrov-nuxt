@@ -1,7 +1,7 @@
 <template>
   <article v-if="posts.length !== 0" class="latest-post">
     <div class="block-title">Latest Posts</div>
-    <b-post v-for="post in posts" :key="post.id" :post="post" />
+    <b-post v-for="post in limitedPosts" :key="post.id" :post="post" />
   </article>
 </template>
 
@@ -14,12 +14,15 @@ export default {
   },
   props: {
     posts: {
-      type: Object,
-      default: () => ({}),
+      type: Array,
+      default: () => [],
     },
+    limit: { type: Number, default: 3 },
   },
-  onMounted() {
-    console.log(this.posts)
+  computed: {
+    limitedPosts() {
+      return this.posts.slice(0, this.limit)
+    },
   },
 }
 </script>

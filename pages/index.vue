@@ -1,6 +1,6 @@
 <template>
   <div class="content-wrapper main-page">
-    <b-hero :content="homepage" />
+    <b-hero :content="content" />
     <b-posts-widget :posts="posts" />
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   async asyncData({ $prismic, error }) {
     try {
       // Main Page content
-      const homepage = (await $prismic.api.getSingle('homepage')).data
+      const content = (await $prismic.api.getSingle('homepage')).data
 
       // Latest blog posts (limited to 3)
       const blogPosts = await $prismic.api.query(
@@ -25,10 +25,8 @@ export default {
         { orderings: '[my.post.date desc]' }
       )
 
-      console.log(blogPosts.results)
-
       return {
-        homepage,
+        content,
         posts: blogPosts.results,
       }
     } catch (e) {

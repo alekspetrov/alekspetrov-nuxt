@@ -1,26 +1,24 @@
 <template>
   <div class="page content-wrapper">
-    <header class="header">
-      <h1 class="title text-large">
-        {{ $prismic.asText(document.title) }}
-      </h1>
-      <p class="subtitle">{{ $prismic.asText(document.description) }}</p>
-      <b-meta :date="document.date" tag="Design" class="meta" />
-    </header>
+    <b-blog-header
+      :title="$prismic.asText(document.title)"
+      :description="$prismic.asText(document.description)"
+    />
     <article class="article">
       <img :src="image" alt="" />
-      <p v-html="document.description[0].text"></p>
-      <p v-html="document.description[0].text"></p>
+      <b-slices :slices="slices"></b-slices>
     </article>
   </div>
 </template>
 
 <script>
+import BBlogHeader from '@/components/b-blog-header'
+import BSlices from '@/components/b-slices'
+
 export default {
-  head() {
-    return {
-      title: 'Blog',
-    }
+  components: {
+    BBlogHeader,
+    BSlices,
   },
   async asyncData({ $prismic, params, error }) {
     try {
@@ -35,29 +33,10 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
+  head() {
+    return {
+      title: 'Blog',
+    }
+  },
 }
 </script>
-
-<style lang="postcss" scoped>
-.header {
-  margin-bottom: var(--space-4xl);
-}
-
-.title {
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-xl);
-  line-height: 1.12;
-}
-
-.subtitle {
-  font-size: var(--text-lg);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  margin-bottom: var(--space-xl);
-  color: var(--gray-900);
-}
-
-.meta {
-  margin-bottom: var(--space-xl);
-}
-</style>
