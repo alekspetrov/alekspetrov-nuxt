@@ -6,7 +6,7 @@
       </nuxt-link>
     </h3>
     <p class="description">
-      {{ getFirstParagraph(post) }}
+      {{ $prismic.asText(post.data.description) }}
     </p>
     <b-meta :date="post.data.date" tag="Development" />
   </article>
@@ -33,33 +33,6 @@ export default {
   },
   created() {
     this.link = LinkResolver(this.post)
-  },
-  methods: {
-    getFirstParagraph(post) {
-      const textLimit = 300
-      const slices = post.data.body
-      let firstParagraph = ''
-      let haveFirstParagraph = false
-
-      slices.map((slice) => {
-        if (!haveFirstParagraph && slice.slice_type === 'paragraph') {
-          slice.primary.text.forEach((block) => {
-            if (block.type === 'paragraph' && !haveFirstParagraph) {
-              firstParagraph += block.text
-              haveFirstParagraph = true
-            }
-          })
-        }
-      })
-
-      const limitedText = firstParagraph.substr(0, textLimit)
-
-      if (firstParagraph.length > textLimit) {
-        return limitedText.substr(0, limitedText.lastIndexOf(' ')) + '...'
-      } else {
-        return firstParagraph
-      }
-    },
   },
 }
 </script>
