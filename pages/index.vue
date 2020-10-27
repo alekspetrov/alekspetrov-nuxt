@@ -5,7 +5,7 @@
         <h1 class="title text-huge">
           {{ $prismic.asText(homepage.headline) }}
         </h1>
-        <prismic-rich-text :field="homepage.description" class="text" />
+        <prismic-rich-text :field="homepage.description" class="subtitle" />
         <div class="contact-links">
           <article v-for="(link, i) in links" :key="i">
             <a :href="link.link.url" class="link-cta contact-me">
@@ -77,7 +77,7 @@ export default {
   margin-bottom: var(--space-lg);
 }
 
-.text {
+.subtitle {
   color: var(--gray-900);
   font-size: var(--text-md);
   line-height: 2;
