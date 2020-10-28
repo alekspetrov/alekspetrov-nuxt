@@ -8,17 +8,17 @@
     <p class="description">
       {{ $prismic.asText(post.data.description) }}
     </p>
-    <b-meta :date="post.data.date" tag="Development" />
+    <block-meta :date="post.data.date" tag="Development" />
   </article>
 </template>
 
 <script>
 import LinkResolver from '@/plugins/link-resolver'
-import BMeta from '@/components/b-meta'
+import BlockMeta from '@/components/blocks/b-meta'
 
 export default {
   components: {
-    BMeta,
+    BlockMeta,
   },
   props: {
     post: {

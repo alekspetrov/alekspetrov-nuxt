@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import IconMail from '@/components/icons/icon-mail'
-import IconTwitter from '@/components/icons/icon-twitter'
+import IconMail from '@/components/icons/i-mail'
+import IconTwitter from '@/components/icons/i-twitter'
 
 export default {
   components: {

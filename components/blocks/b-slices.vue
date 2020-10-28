@@ -1,17 +1,17 @@
 <template>
   <div>
     <section v-for="(slice, i) in slices" :key="'slice-' + i">
-      <component :is="`b-slice-${slice.slice_type}`" :slice="slice"></component>
+      <component :is="`slice-${slice.slice_type}`" :slice="slice"></component>
     </section>
   </div>
 </template>
 
 <script>
-const BSliceText = () => import('../components/b-slice-text.vue')
+const SliceText = () => import('@/components/slices/s-text.vue')
 
 export default {
   components: {
-    BSliceText,
+    SliceText,
   },
   props: {
     slices: {
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      BSliceText,
+      SliceText,
     }
   },
   mounted() {

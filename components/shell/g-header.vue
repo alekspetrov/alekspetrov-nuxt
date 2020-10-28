@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import ThemeSwitcher from '@/components/theme-switcher'
-import IconTriangle from '@/components/icons/icon-triangle'
+import ThemeSwitcher from '@/components/elements/e-theme-switcher'
+import IconTriangle from '@/components/icons/i-triangle'
 
 export default {
   name: 'GHeader',

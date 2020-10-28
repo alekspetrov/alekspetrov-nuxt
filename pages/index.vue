@@ -1,18 +1,18 @@
 <template>
   <div class="content-wrapper main-page">
-    <b-hero :content="content" />
-    <b-posts-widget :posts="posts" />
+    <block-hero :content="content" />
+    <widget-posts :posts="posts" />
   </div>
 </template>
 
 <script>
-import BHero from '@/components/b-hero'
-import BPostsWidget from '@/components/b-posts-widget'
+import BlockHero from '@/components/block/b-hero'
+import WidgetPosts from '@/components/widgets/w-posts'
 
 export default {
   components: {
-    BHero,
-    BPostsWidget,
+    BlockHero,
+    WidgetPosts,
   },
   async asyncData({ $prismic, error }) {
     try {

@@ -1,23 +1,23 @@
 <template>
   <div class="shell" :class="{ 'dark-theme': darkTheme }">
-    <g-header @switch-theme="toggleTheme" />
-    <g-body>
+    <shell-header @switch-theme="toggleTheme" />
+    <shell-body>
       <Nuxt />
-    </g-body>
-    <g-footer />
+    </shell-body>
+    <shell-footer />
   </div>
 </template>
 
 <script>
-import GHeader from '@/components/g-header'
-import GFooter from '@/components/g-footer'
-import GBody from '@/components/g-body'
+import ShellHeader from '@/components/shell/g-header'
+import ShellFooter from '@/components/shell/g-footer'
+import ShellBody from '@/components/shell/g-body'
 
 export default {
   components: {
-    GHeader,
-    GFooter,
-    GBody,
+    ShellHeader,
+    ShellFooter,
+    ShellBody,
   },
   data() {
     return {

@@ -1,16 +1,16 @@
 <template>
   <article v-if="posts.length !== 0" class="latest-post">
     <div class="block-title">Latest Posts</div>
-    <b-post v-for="post in limitedPosts" :key="post.id" :post="post" />
+    <widget-item v-for="post in limitedPosts" :key="post.id" :post="post" />
   </article>
 </template>
 
 <script>
-import BPost from '@/components/b-post'
+import WidgetItem from './w-item'
 
 export default {
   components: {
-    BPost,
+    WidgetItem,
   },
   props: {
     posts: {

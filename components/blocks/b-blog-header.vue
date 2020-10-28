@@ -4,16 +4,16 @@
       {{ title }}
     </h1>
     <p class="subtitle">{{ description }}</p>
-    <b-meta :date="date" :tag="tag" class="meta" />
+    <block-meta :date="date" :tag="tag" class="meta" />
   </header>
 </template>
 
 <script>
-import BMeta from '@/components/b-meta'
+import BlockMeta from '@/components/blocks/b-meta'
 
 export default {
   components: {
-    BMeta,
+    BlockMeta,
   },
   props: {
     title: {

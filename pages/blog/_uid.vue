@@ -1,24 +1,24 @@
 <template>
   <div class="page content-wrapper">
-    <b-blog-header
+    <blog-header
       :title="$prismic.asText(document.title)"
       :description="$prismic.asText(document.description)"
     />
     <article class="article">
       <img :src="image" alt="" />
-      <b-slices :slices="slices"></b-slices>
+      <block-slices :slices="slices"></block-slices>
     </article>
   </div>
 </template>
 
 <script>
-import BBlogHeader from '@/components/b-blog-header'
-import BSlices from '@/components/b-slices'
+import BlogHeader from '@/components/blocks/b-blog-header'
+import BlockSlices from '@/components/blocks/b-slices'
 
 export default {
   components: {
-    BBlogHeader,
-    BSlices,
+    BlogHeader,
+    BlockSlices,
   },
   async asyncData({ $prismic, params, error }) {
     try {
