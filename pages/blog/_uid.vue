@@ -5,7 +5,7 @@
       :description="$prismic.asText(document.description)"
     />
     <article class="article">
-      <img :src="image" alt="" />
+      <img :src="image.url" :alt="image.alt" />
       <block-slices :slices="slices"></block-slices>
     </article>
   </div>
@@ -27,7 +27,7 @@ export default {
       return {
         document: post,
         slices: post.body,
-        image: post.image.url,
+        image: post.image,
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
