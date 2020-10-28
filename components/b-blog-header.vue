@@ -25,7 +25,7 @@ export default {
       default: null,
     },
     date: {
-      type: String,
+      type: [Number, String],
       default: () => Date.now(),
     },
     tag: {

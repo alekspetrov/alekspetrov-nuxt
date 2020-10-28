@@ -1,9 +1,7 @@
 <template>
   <div>
     <section v-for="(slice, i) in slices" :key="'slice-' + i">
-      <template v-if="slice.slice_type === 'paragraph'">
-        <b-slice-text :slice="slice" />
-      </template>
+      <component :is="`b-slice-${slice.slice_type}`" :slice="slice"></component>
     </section>
   </div>
 </template>
@@ -20,6 +18,14 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      BSliceText,
+    }
+  },
+  mounted() {
+    console.log(this.slices)
   },
 }
 </script>
