@@ -4,7 +4,7 @@
       {{ title }}
     </h1>
     <p class="subtitle">{{ description }}</p>
-    <block-meta :date="date" :tag="tag" class="meta" />
+    <block-meta :date="date" :tag="tag" size="medium" />
   </header>
 </template>
 
@@ -54,9 +54,5 @@ export default {
   line-height: 1.5;
   margin-bottom: var(--space-xl);
   color: var(--gray-900);
-}
-
-.meta {
-  margin-bottom: var(--space-xl);
 }
 </style>

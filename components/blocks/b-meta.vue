@@ -1,15 +1,17 @@
 <template>
-  <p class="meta">
+  <p class="meta" :class="size">
     <time class="date" :datetime="date">{{ humanReadableDate }}</time>
-    in
-    <a href="#" class="link tag">{{ tag }}</a>
+    <template v-if="tag">
+      in
+      <a href="#" class="link tag">{{ tag }}</a>
+    </template>
   </p>
 </template>
 
 <script>
 export default {
   name: 'BMeta',
-  props: ['date', 'tag'],
+  props: ['date', 'tag', 'size'],
   computed: {
     humanReadableDate() {
       const date = new Date(this.date)
@@ -29,5 +31,9 @@ export default {
 .meta {
   font-size: var(--text-sm);
   font-family: var(--font-sans);
+}
+
+.medium {
+  font-size: var(--text-base);
 }
 </style>

@@ -8,7 +8,7 @@
     <p class="description">
       {{ $prismic.asText(post.data.description) }}
     </p>
-    <block-meta :date="post.data.date" tag="Development" />
+    <block-meta :date="post.data.date" :tag="post.tag" />
   </article>
 </template>
 

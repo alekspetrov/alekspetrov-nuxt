@@ -40,6 +40,6 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
+  background-color: var(--gray-100);
 }
 </style>

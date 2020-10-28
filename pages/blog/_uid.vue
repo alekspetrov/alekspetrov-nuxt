@@ -1,14 +1,11 @@
 <template>
-  <div class="page content-wrapper">
+  <article class="page content-wrapper">
     <blog-header
       :title="$prismic.asText(document.title)"
       :description="$prismic.asText(document.description)"
     />
-    <article class="article">
-      <img :src="image.url" :alt="image.alt" />
-      <block-slices :slices="slices"></block-slices>
-    </article>
-  </div>
+    <block-slices :slices="slices"></block-slices>
+  </article>
 </template>
 
 <script>
@@ -27,7 +24,6 @@ export default {
       return {
         document: post,
         slices: post.body,
-        image: post.image,
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
