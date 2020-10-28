@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import BlockHero from '@/components/block/b-hero'
-import WidgetPosts from '@/components/widgets/w-posts'
+import BlockHero from '@/components/blocks/b-hero'
+import WidgetPosts from '@/components/widgets/posts/w-list'
 
 export default {
   components: {
